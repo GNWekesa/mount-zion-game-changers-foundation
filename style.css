@@ -1,0 +1,35 @@
+:root {
+    --gold: #FFD700;
+    --purple: #800080;
+    --blue: #0000FF;
+    --red: #FF2400;
+    --white: #FFFFFF;
+}
+
+/* TEXT COLORS */
+.text-purple {
+    color: var(--purple);
+}
+
+.text-blue {
+    color: var(--blue);
+}
+
+.text-gold {
+    color: var(--gold);
+}
+
+/* BACKGROUNDS */
+.bg-purple {
+    background-color: var(--purple);
+}
+
+.bg-gold {
+    background-color: var(--gold);
+}
+
+/* OPTIONAL STYLING */
+body {
+    background-color: var(--white);
+    font-family: Arial, sans-serif;
+}
