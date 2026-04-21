@@ -4,26 +4,107 @@
   --blue: #0000FF;
   --red: #FF2400;
   --white: #FFFFFF;
+
+  /* ✨ Extra modern neutrals */
+  --dark: #0d0d0d;
+  --light-gray: #f5f5f5;
 }
 
+.hero {
+  height: 100vh;
+  background: linear-gradient(
+      rgba(128, 0, 128, 0.6),
+      rgba(0, 0, 255, 0.4)
+    ),
+    url('../images/with_elders.jpg') center center/cover no-repeat;
+
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: var(--white);
+}
+
+/* ======================
+   GLOBAL STYLES
+====================== */
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Arial", sans-serif;
   scroll-behavior: smooth;
   margin: 0;
   padding: 0;
+  background-color: var(--white);
+  color: #333;
 }
 
-/* Navbar */
+/* ======================
+   NAVBAR (IMPROVED)
+====================== */
 .navbar {
-  background-color: var(--purple);
+  background: linear-gradient(90deg, var(--purple), var(--blue));
+  transition: all 0.3s ease;
+  padding: 12px 0;
 }
 
 .navbar-brand {
   color: var(--gold) !important;
+  font-weight: 700;
+  font-size: 1.4rem;
+  letter-spacing: 1px;
+}
+
+/* Nav links */
+.nav-link {
+  color: var(--white) !important;
+  margin: 0 8px;
+  transition: 0.3s ease;
+  position: relative;
+}
+
+.nav-link:hover {
+  color: var(--gold) !important;
+}
+
+/* underline hover effect */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: var(--gold);
+  left: 0;
+  bottom: -4px;
+  transition: 0.3s;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* active link */
+.nav-link.active {
+  color: var(--gold) !important;
   font-weight: bold;
 }
 
-/* Hero Section */
+/* Donate button */
+.btn-warning {
+  background-color: var(--gold) !important;
+  color: var(--purple) !important;
+  border: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn-warning:hover {
+  background-color: var(--red) !important;
+  color: var(--white) !important;
+}
+
+/* ======================
+   HERO SECTION (IMPROVED)
+====================== */
 .hero {
   height: 100vh;
   background: url('../images/with_elders.jpg') center center/cover no-repeat;
@@ -35,35 +116,79 @@ body {
   color: var(--white);
 }
 
-/* Blurred overlay for readability */
+/* Dark + purple overlay blend */
 .hero-overlay {
   position: absolute;
-  top: 0; left: 0;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(128, 0, 128, 0.5); /* purple tint */
-  backdrop-filter: blur(6px); /* blur effect */
-  -webkit-backdrop-filter: blur(6px);
+  background: linear-gradient(
+    rgba(128, 0, 128, 0.6),
+    rgba(0, 0, 255, 0.4)
+  );
   z-index: 0;
 }
 
+/* hero text */
 .hero-content {
   position: relative;
-  z-index: 1; /* ensure text is above overlay */
+  z-index: 1;
+  max-width: 700px;
+  padding: 20px;
 }
 
-/* Hero buttons */
+/* ======================
+   BUTTONS
+====================== */
 .btn-gold {
   background-color: var(--gold);
-  color: #000;
+  color: var(--purple);
   border: none;
-  transition: 0.3s;
+  padding: 10px 20px;
+  border-radius: 30px;
+  transition: 0.3s ease;
+  font-weight: bold;
 }
 
 .btn-gold:hover {
-  background-color: #e6c200;
+  background-color: var(--red);
+  color: var(--white);
+  transform: translateY(-2px);
 }
 
-/* Text colors */
+/* ======================
+   TEXT UTILITIES
+====================== */
 .text-purple { color: var(--purple); }
 .text-blue { color: var(--blue); }
+.text-gold { color: var(--gold); }
+
+/* ======================
+   FOOTER (MATCH BRAND)
+====================== */
+footer {
+  background: linear-gradient(90deg, var(--purple), var(--blue));
+  color: var(--white);
+}
+
+footer a {
+  color: var(--white);
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+footer a:hover {
+  color: var(--gold);
+}
+
+/* ======================
+   MICRO INTERACTIONS
+====================== */
+button, .btn {
+  transition: all 0.3s ease;
+}
+
+button:hover, .btn:hover {
+  transform: translateY(-2px);
+}
