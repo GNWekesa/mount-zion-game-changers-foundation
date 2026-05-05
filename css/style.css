@@ -36,7 +36,10 @@ body {
   padding: 0;
   background-color: var(--white);
   color: #333;
+  margin-top: 80px; /* adjust depending on navbar height */
 }
+
+
 
 /* ======================
    NAVBAR (IMPROVED)
@@ -191,4 +194,43 @@ button, .btn {
 
 button:hover, .btn:hover {
   transform: translateY(-2px);
+}
+/* ======================
+   OTHER
+====================== */
+/* Smooth floating/bounce effect */
+.tier-image {
+  max-width: 600px;
+  width: 100%;
+  animation: floatBounce 3s ease-in-out infinite;
+}
+
+/* Keyframes for soft bounce */
+@keyframes floatBounce {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+.tier-image {
+  max-width: 600px;
+  width: 100%;
+  animation: floatBounce 3s ease-in-out infinite;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* Vision & Mission cards hover effect */
+section .shadow-sm {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section .shadow-sm:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
